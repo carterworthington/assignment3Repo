@@ -1,0 +1,15 @@
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\bin\Debug\net8.0\Assignment3-carter-w.exe
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\bin\Debug\net8.0\Assignment3-carter-w.deps.json
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\bin\Debug\net8.0\Assignment3-carter-w.runtimeconfig.json
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\bin\Debug\net8.0\Assignment3-carter-w.dll
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\bin\Debug\net8.0\Assignment3-carter-w.pdb
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\obj\Debug\net8.0\Assignment3-carter-w.GeneratedMSBuildEditorConfig.editorconfig
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\obj\Debug\net8.0\Assignment3-carter-w.AssemblyInfoInputs.cache
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\obj\Debug\net8.0\Assignment3-carter-w.AssemblyInfo.cs
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\obj\Debug\net8.0\Assignment3-carter-w.csproj.CoreCompileInputs.cache
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\obj\Debug\net8.0\Assignment3-carter-w.sourcelink.json
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\obj\Debug\net8.0\Assignment3-carter-w.dll
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\obj\Debug\net8.0\refint\Assignment3-carter-w.dll
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\obj\Debug\net8.0\Assignment3-carter-w.pdb
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\obj\Debug\net8.0\Assignment3-carter-w.genruntimeconfig.cache
+C:\CPSC1012\assignment3Repo\Assignment3-carter-w\obj\Debug\net8.0\ref\Assignment3-carter-w.dll
