@@ -158,8 +158,17 @@ double FindHighestValueInMemory(double[] values, int logicalSize)
 
 double FindLowestValueInMemory(double[] values, int logicalSize)
 {
-	Console.WriteLine("Not Implemented Yet");
-	return 0;
+	 double lowestValue = values[0];
+    for (int i = 1; i < logicalSize; i++)
+    {
+        if (values[i] < lowestValue)
+        {
+            lowestValue = values[i];
+        }
+    }
+
+    Console.WriteLine($"The Lowest Value is: {lowestValue}");
+    return lowestValue;
 	//TODO: Replace this code with yours to implement this function.
 }
 
