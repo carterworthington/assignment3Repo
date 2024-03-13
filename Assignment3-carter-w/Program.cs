@@ -175,18 +175,15 @@ double FindLowestValueInMemory(double[] values, int logicalSize)
 void FindAverageOfValuesInMemory(double[] values, int logicalSize)
 {
 	double sum = 0;
-    foreach (double value in values)
+    for (int i = 0; i < logicalSize; i++)
     {
-        sum += value;
+        sum += values[i];
     }
 
-    double average = sum / values.Length;
+    double average = sum / logicalSize;
     
-    
-    
-    
-    Console.WriteLine($"The Average of Values: {average:n2}");
-	//TODO: Replace this code with yours to implement this function.
+    Console.WriteLine($"The Average of Values: {average:n1}");
+	
 }
 
 void SaveMemoryValuesToFile(string[] dates, double[] values, int logicalSize)
@@ -198,8 +195,7 @@ void SaveMemoryValuesToFile(string[] dates, double[] values, int logicalSize)
 int AddMemoryValues(string[] dates, double[] values, int logicalSize)
 {
 	Console.WriteLine("Not Implemented Yet");
-	return 0;
-	//TODO: Replace this code with yours to implement this function.
+  return 0;
 }
 
 void EditMemoryValues(string[] dates, double[] values, int logicalSize)
