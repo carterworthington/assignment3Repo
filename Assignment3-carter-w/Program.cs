@@ -153,7 +153,7 @@ double FindHighestValueInMemory(double[] values, int logicalSize)
     
     Console.WriteLine($"The Highest Value is: {highestValue}");
     return highestValue;
-	//TODO: Replace this code with yours to implement this function.
+	
 }
 
 double FindLowestValueInMemory(double[] values, int logicalSize)
@@ -169,7 +169,7 @@ double FindLowestValueInMemory(double[] values, int logicalSize)
 
     Console.WriteLine($"The Lowest Value is: {lowestValue}");
     return lowestValue;
-	//TODO: Replace this code with yours to implement this function.
+	
 }
 
 void FindAverageOfValuesInMemory(double[] values, int logicalSize)
@@ -206,6 +206,9 @@ void EditMemoryValues(string[] dates, double[] values, int logicalSize)
 
 void GraphValuesInMemory(string[] dates, double[] values, int logicalSize)
 {
-	Console.WriteLine("Not Implemented Yet");
+  //for (int row = yAxisMaxValue; row >= int.MinValue; row-=yAxisSubtract)
+  //Console.Write($"\n{row,yAxisWidth:c0} |");
+	//Console.WriteLine("Not Implemented Yet");
+  // uses 3 for loops, one for rows, columns and logical size (looks at each data value in our arrays). also a substring. 
 	//TODO: Replace this code with yours to implement this function.
 }
