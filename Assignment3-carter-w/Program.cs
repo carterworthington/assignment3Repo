@@ -86,10 +86,24 @@ void DisplayAnalysisMenu()
 
 string Prompt(string prompt)
 {
-  string response = "";
-  Console.Write(prompt);
-  response = Console.ReadLine();
-  return response;
+  //bool inValidInput = true;
+  string myString  = "";
+  while (true)
+  {
+    try
+    {
+      Console.Write(prompt);
+      myString = Console.ReadLine().Trim();
+      if(string.IsNullOrEmpty(myString))
+        throw new Exception($"Empty Input: Please enter something. ");
+      break;
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine(ex.Message);
+    }
+  }
+  return 
 }
 
 string GetFileName()
@@ -194,8 +208,21 @@ void SaveMemoryValuesToFile(string[] dates, double[] values, int logicalSize)
 
 int AddMemoryValues(string[] dates, double[] values, int logicalSize)
 {
-	Console.WriteLine("Not Implemented Yet");
-  return 0;
+	double value = 0.0;
+  string dateString = "";
+  
+  dateString = PromptDate("Enter date format mm-dd-yyyy (eg 11-23-2023): ");
+  bool found = false;
+  for (int i = 0; i < logicalSize; i++)
+    if (dates[i].Equals(dateString))
+      found = true;
+  if(found == true)
+    throw new Exception($"{dateString} is already in memory. Edit entry instead.");
+  value = PromptDoubleBetweenMinMax($"Enter a double value", minValue, maxValue);
+  dates[logicalSize] = dateString;
+  values[logicalSize] = value;
+  logicalSize++;
+  return logicalSize;
 }
 
 void EditMemoryValues(string[] dates, double[] values, int logicalSize)
@@ -210,5 +237,7 @@ void GraphValuesInMemory(string[] dates, double[] values, int logicalSize)
   //Console.Write($"\n{row,yAxisWidth:c0} |");
 	//Console.WriteLine("Not Implemented Yet");
   // uses 3 for loops, one for rows, columns and logical size (looks at each data value in our arrays). also a substring. 
-	//TODO: Replace this code with yours to implement this function.
+	
+  
+  //TODO: Replace this code with yours to implement this function.
 }
