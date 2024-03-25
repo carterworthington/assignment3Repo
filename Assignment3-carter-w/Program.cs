@@ -5,6 +5,8 @@
 int physicalSize = 31;
 int logicalSize = 0;
 
+double minValue = 0.0;
+double maxValue = 1000.0;
 // TODO: create a double array named 'values', use the max size constant you declared
 // above to specify the physical size of the array.
 double[] values = new double[physicalSize];
@@ -103,7 +105,7 @@ string Prompt(string prompt)
       Console.WriteLine(ex.Message);
     }
   }
-  return 
+  return myString;
 }
 
 string GetFileName()
@@ -147,10 +149,55 @@ void DisplayMemoryValues(string[] dates, double[] values, int logicalSize)
 {
 	if(logicalSize == 0)
 		throw new Exception($"No Entries loaded. Please load a file to memory or add a value in memory");
+    Array.Sort(dates, values, 0, logicalSize);
 	Console.WriteLine($"\nCurrent Loaded Entries: {logicalSize}");
 	Console.WriteLine($"   Date     Value");
 	for (int i = 0; i < logicalSize; i++)
 		Console.WriteLine($"{dates[i]}   {values[i]}");
+}
+
+double PromptDoubleBetweenMinMax(String prompt, double min, double max)
+{
+  bool inValidInput = true;
+  double num = 0;
+  while (inValidInput)
+  {
+    try
+    {
+      Console.Write($"{prompt} between {min:n2} and {max:n2}: ");
+      num = double.Parse(Console.ReadLine());
+      if (num < min || num > max)
+        throw new Exception($"Invalid. Must be between {min} and {max}. ");
+      inValidInput = false;
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"{ex.Message}");
+    }
+  }
+  return num;
+}
+
+string PromptDate(string prompt)
+{
+  bool inValidInput = true;
+  DateTime date = DateTime.Today;
+  Console.WriteLine(date);
+  while (inValidInput)
+  {
+    try
+    {
+      Console.Write(prompt);
+      date = DateTime.Parse(Console.ReadLine());
+      Console.WriteLine(date);
+      inValidInput = false;
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine($"{ex.Message}");
+    }
+  }
+  return date.ToString("MM-dd-yyyy");
 }
 
 double FindHighestValueInMemory(double[] values, int logicalSize)
@@ -210,6 +257,7 @@ int AddMemoryValues(string[] dates, double[] values, int logicalSize)
 {
 	double value = 0.0;
   string dateString = "";
+
   
   dateString = PromptDate("Enter date format mm-dd-yyyy (eg 11-23-2023): ");
   bool found = false;
@@ -227,8 +275,24 @@ int AddMemoryValues(string[] dates, double[] values, int logicalSize)
 
 void EditMemoryValues(string[] dates, double[] values, int logicalSize)
 {
-	Console.WriteLine("Not Implemented Yet");
-	//TODO: Replace this code with yours to implement this function.
+	double value = 0.0;
+  string dateString = "";
+  int foundIndex = 0;
+
+  if(logicalSize == 0)
+    throw new Exception($"No Entries loaded. Please load a file to memory or add a value in memory");
+  dateString = PromptDate("Enter date format mm-dd-yyyy (eg 11-23-2023): ");
+  bool found = false;
+  for (int i = 0; i < logicalSize; i++)
+    if (dates[i].Equals(dateString))
+    {
+      found = true;
+      foundIndex = i;
+    }
+  if(found == false)
+    throw new Exception($"{dateString} is not in memory. Add entry instead. ");
+  value = PromptDoubleBetweenMinMax($"Enter a double value", minValue, maxValue);
+  values[foundIndex] = value;
 }
 
 void GraphValuesInMemory(string[] dates, double[] values, int logicalSize)
