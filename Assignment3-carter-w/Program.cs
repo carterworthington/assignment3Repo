@@ -249,8 +249,22 @@ void FindAverageOfValuesInMemory(double[] values, int logicalSize)
 
 void SaveMemoryValuesToFile(string[] dates, double[] values, int logicalSize)
 {
-	Console.WriteLine("Not Implemented Yet");
-	//TODO: Replace this code with yours to implement this function.
+  string fileName = Prompt("Enter file name including .csv or .txt: ");
+  string filePath = $"./data/{fileName}";
+  if (logicalSize == 0)
+    throw new Exception("No entries loaded. Please load a file into memory");
+  if (logicalSize > 1)
+    Array.Sort(dates, values, 0, logicalSize);
+
+  string[] csvLines = new string[logicalSize + 1];
+  csvLines[0] = "dates,values";
+  for (int i = 1; i <= logicalSize; i++)
+  {
+    csvLines[i] = $"{dates[i-1]},{values[i-1].ToString()}";
+  }
+
+  File.WriteAllLines(filePath, csvLines);
+  Console.WriteLine($"Save complete. {fileName} has {logicalSize} entries.");
 }
 
 int AddMemoryValues(string[] dates, double[] values, int logicalSize)
