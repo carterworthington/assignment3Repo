@@ -311,9 +311,9 @@ void EditMemoryValues(string[] dates, double[] values, int logicalSize)
 
 void GraphValuesInMemory(string[] dates, double[] values, int logicalSize)
 {
-     Console.WriteLine("Sales Graph");
+   Console.WriteLine("Sales Graph");
 
-    // Print data points for each date
+    // Print Y-axis labels and data points
     for (int y = 100; y >= 0; y -= 10)
     {
         Console.Write($"{y,3} |");
@@ -326,19 +326,34 @@ void GraphValuesInMemory(string[] dates, double[] values, int logicalSize)
                 int day = int.Parse(dates[i].Substring(3, 2)); // Extract day part from the date
                 if (day == x && (int)values[i] == y)
                 {
-                    Console.Write($"  *  ");
+                    Console.Write($"{values[i],4}"); // Print sales value
                     saleFound = true;
                     break;
                 }
             }
             if (!saleFound)
             {
-                Console.Write("     "); // Adjust spacing if no sale for the day
+                Console.Write("    "); // Adjust spacing if no sale for the day
             }
         }
         Console.WriteLine();
     }
-    Console.WriteLine();
+
+    // Print X-axis labels and lines
+    Console.WriteLine("    +-----------------------------------");
+    Console.Write("      ");
+    for (int x = 1; x <= 31; x++)
+    {
+        Console.Write($"---+");
+    }
+    Console.WriteLine("\n      ");
+    for (int x = 1; x <= 31; x++)
+    {
+        Console.Write($"{x,3} ");
+    }
+    Console.WriteLine("\n      Days");
+}
+
   //for (int row = yAxisMaxValue; row >= int.MinValue; row-=yAxisSubtract)
   //Console.Write($"\n{row,yAxisWidth:c0} |");
 	//Console.WriteLine("Not Implemented Yet");
@@ -346,4 +361,3 @@ void GraphValuesInMemory(string[] dates, double[] values, int logicalSize)
 	
   
   //TODO: Replace this code with yours to implement this function.
-}
