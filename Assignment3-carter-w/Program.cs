@@ -311,6 +311,34 @@ void EditMemoryValues(string[] dates, double[] values, int logicalSize)
 
 void GraphValuesInMemory(string[] dates, double[] values, int logicalSize)
 {
+     Console.WriteLine("Sales Graph");
+
+    // Print data points for each date
+    for (int y = 100; y >= 0; y -= 10)
+    {
+        Console.Write($"{y,3} |");
+
+        for (int x = 1; x <= 31; x++)
+        {
+            bool saleFound = false;
+            for (int i = 0; i < logicalSize; i++)
+            {
+                int day = int.Parse(dates[i].Substring(3, 2)); // Extract day part from the date
+                if (day == x && (int)values[i] == y)
+                {
+                    Console.Write($"  *  ");
+                    saleFound = true;
+                    break;
+                }
+            }
+            if (!saleFound)
+            {
+                Console.Write("     "); // Adjust spacing if no sale for the day
+            }
+        }
+        Console.WriteLine();
+    }
+    Console.WriteLine();
   //for (int row = yAxisMaxValue; row >= int.MinValue; row-=yAxisSubtract)
   //Console.Write($"\n{row,yAxisWidth:c0} |");
 	//Console.WriteLine("Not Implemented Yet");

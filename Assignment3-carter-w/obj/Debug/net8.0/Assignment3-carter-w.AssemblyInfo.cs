@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Assignment3-carter-w")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f4fe57123441c2d27c117459cbf10835ab94ef91")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0fba3177c2ee07528469e714c5e0c246dfb1f0b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Assignment3-carter-w")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Assignment3-carter-w")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
